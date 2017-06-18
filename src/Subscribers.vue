@@ -20,16 +20,12 @@
 
 <script>
 export default {
+    props: [
+        'subscribers'
+    ],
     data() {
         return {
-            subscribers: [
-                {name: 'Subscriber 1', age: 25, show: false},
-                {name: 'Subscriber 2', age: 26, show: false},
-                {name: 'Subscriber 3', age: 23, show: false},
-                {name: 'Subscriber 4', age: 30, show: false},
-                {name: 'Subscriber 5', age: 33, show: false},
-                {name: 'Subscriber 6', age: 29, show: false},
-            ]
+            
         }
     }
 }

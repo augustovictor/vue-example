@@ -1,7 +1,7 @@
 <template>
     <div id="main-content">
         Content
-        <subscribers></subscribers>
+        <subscribers :subscribers="subscribers"></subscribers>
         <rss></rss>
     </div>
 </template>
@@ -12,9 +12,15 @@ import Subscribers from './Subscribers.vue'
 import Rss from './Rss.vue'
 
 export default {
+    props: {
+        subscribers: {
+            type: Array,
+            required: true
+        }
+    },
     components: {
         rss: Rss,
-        subscribers:Subscribers
+        subscribers: Subscribers
     }
 }
 </script>

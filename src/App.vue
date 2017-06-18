@@ -2,7 +2,7 @@
   <div id="app">
     <app-header></app-header>
     <h1>{{greeting()}}</h1>
-    <app-content></app-content>
+    <app-content :subscribers="subscribers"></app-content>
     <app-footer></app-footer>
     
   </div>
@@ -22,7 +22,14 @@ export default {
   },
   data () {
     return {
-
+      subscribers: [
+          {name: 'Subscriber 1', age: 25, show: false},
+          {name: 'Subscriber 2', age: 26, show: false},
+          {name: 'Subscriber 3', age: 23, show: false},
+          {name: 'Subscriber 4', age: 30, show: false},
+          {name: 'Subscriber 5', age: 33, show: false},
+          {name: 'Subscriber 6', age: 29, show: false},
+      ]
     }
   },
   methods: {
