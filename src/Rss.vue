@@ -1,6 +1,7 @@
 <template>
     <div id="rss-container">
         <h1>Rss register</h1>
+        <p @click="changeContent">{{changeableContent}}</p>
         <ul>
             <li v-for="freq in frequencies">{{freq}}</li>
         </ul>
@@ -9,11 +10,19 @@
 
 <script>
 export default {
-  data() {
-      return {
-          frequencies: ['Daily', 'Weekly', 'Yearly']
-      }
-  }
+    data() {
+        return {
+            frequencies: ['Daily', 'Weekly', 'Yearly'],
+            changeableContent: 'This will change.'
+        }
+    },
+    methods: {
+        changeContent: function() {
+            var res = 'Content changed by event. From child to parent. If it was from parent to child we\'d use props.';
+            this.changeableContent = res;
+            this.$emit('changeContent', res);
+        }
+    }
 }
 </script>
 

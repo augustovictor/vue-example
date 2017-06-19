@@ -1,8 +1,9 @@
 <template>
     <div id="main-content">
         Content
+        <p>{{changeableContent}}</p>
         <subscribers :subscribers="subscribers"></subscribers>
-        <rss></rss>
+        <rss @changeContent="changeContent($event)"></rss>
     </div>
 </template>
 
@@ -21,6 +22,17 @@ export default {
     components: {
         rss: Rss,
         subscribers: Subscribers
+    },
+    data() {
+        return {
+            changeableContent: 'This is not changed yet.'
+        }
+    },
+    methods: {
+        changeContent: function(changedContent) {
+            console.log('test')
+            this.changeableContent = changedContent;
+        }
     }
 }
 </script>
