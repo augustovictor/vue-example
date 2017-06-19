@@ -3,13 +3,15 @@
         Content
         <p>{{changeableContent}}</p>
         <subscribers :subscribers="subscribers"></subscribers>
-        <rss :changeableContent="changeableContent" @changeContent="changeContent($event)"></rss>
+        <!-- <rss :changeableContent="changeableContent" @changeContent="changeContent($event)"></rss> -->
+        <rss></rss>
     </div>
 </template>
 
 <script>
 
 import Subscribers from './Subscribers.vue'
+import {bus} from './main'
 import Rss from './Rss.vue'
 
 export default {
@@ -30,9 +32,13 @@ export default {
     },
     methods: {
         changeContent: function(changedContent) {
-            console.log('test')
             this.changeableContent = changedContent;
         }
+    },
+    created() {
+        bus.$on('changeContent', (data) => {
+            this.changeableContent = data;
+        })
     }
 }
 </script>

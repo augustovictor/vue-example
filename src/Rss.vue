@@ -9,12 +9,13 @@
 </template>
 
 <script>
+import {bus} from './main'
 export default {
-    props: {
-        changeableContent: {
-            type: String
-        }
-    },
+    //props: {
+    //    changeableContent: {
+    //       type: String
+    //    }
+    //},
     data() {
         return {
             frequencies: ['Daily', 'Weekly', 'Yearly'],
@@ -23,7 +24,10 @@ export default {
     },
     methods: {
         changeContent: function() {
-            this.$emit('changeContent', 'Content changed by event. From child to parent. If it was from parent to child we\'d use props.');
+           // this.$emit('changeContent', 'Content changed by event. From child to parent. If it was from parent to child we\'d use props.');
+           var res = 'Content changed by event. From child to parent. If it was from parent to child we\'d use props.';
+           this.changeableContent = res;
+           bus.$emit('changeContent', res);
         }
     }
 }
