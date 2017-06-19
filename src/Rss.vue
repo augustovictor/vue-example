@@ -10,6 +10,11 @@
 
 <script>
 export default {
+    props: {
+        changeableContent: {
+            type: String
+        }
+    },
     data() {
         return {
             frequencies: ['Daily', 'Weekly', 'Yearly'],
@@ -18,9 +23,7 @@ export default {
     },
     methods: {
         changeContent: function() {
-            var res = 'Content changed by event. From child to parent. If it was from parent to child we\'d use props.';
-            this.changeableContent = res;
-            this.$emit('changeContent', res);
+            this.$emit('changeContent', 'Content changed by event. From child to parent. If it was from parent to child we\'d use props.');
         }
     }
 }

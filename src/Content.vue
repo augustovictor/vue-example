@@ -3,7 +3,7 @@
         Content
         <p>{{changeableContent}}</p>
         <subscribers :subscribers="subscribers"></subscribers>
-        <rss @changeContent="changeContent($event)"></rss>
+        <rss :changeableContent="changeableContent" @changeContent="changeContent($event)"></rss>
     </div>
 </template>
 
