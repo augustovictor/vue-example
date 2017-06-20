@@ -1,25 +1,25 @@
 <template>
-    <form-helper>
-        <div slot="form-header">
-            <h3 slot="form-header">Sign up form</h3>
+    <form>
+        <div id="form-header">
+            <h3>Login form</h3>
         </div>
 
-        <div slot="form-fields">
+        <div id="form-fields">
             <div>
                 <label for="username">Username</label>
                 <input type="text" name="username" />
             </div>
 
             <div>
-                <label for="email">E-mail</label>
-                <input type="mail" name="email" />
+                <label for="password">Password</label>
+                <input type="text" name="password" />
             </div>
         </div>
 
-        <div slot="form-controls">
-            <button @click="handleSubmit">Sign up</button>
+        <div id="form-controls">
+            <button @click="handleSubmit">Login</button>
         </div>
-    </form-helper>
+    </form>
 </template>
 
 <script>
@@ -38,6 +38,6 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
